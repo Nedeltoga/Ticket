@@ -13,7 +13,7 @@ const order = [
   { product: "wine bottle", type: "drinks", quantity: 1, unitPrice: 7 },
 ];
 
-function getTicket(order: Product[]) {
+export function getTicket(order: Product[]) {
   console.log("Uds", "Producto","Precio", "Importe")
   let ticketPrice = order.reduce((sum, item)=>{
     let itemPrice = item.quantity * item.unitPrice
@@ -21,6 +21,7 @@ function getTicket(order: Product[]) {
     return sum + itemPrice
   }, 0)
   console.log("Total", ticketPrice)
+  return ticketPrice
 }
 
 getTicket(order);
